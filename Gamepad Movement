@@ -1,0 +1,14 @@
+//Movement Gamepad
+
+var sx = gamepad_axis_value(input_device, gp_axisrh);
+var sy = gamepad_axis_value(input_device, gp_axisrv);
+
+var sl = sqrt (sxsx + sysy);
+if sl > shoot_threshold {
+sx = sl;
+sy = sl;
+
+var bullet = instance_create_layer(x, y, lay_bullets, obj_bullet);
+bullet.hspeed = sx;
+bullet.vspeed = sy;
+}
